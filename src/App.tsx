@@ -11,6 +11,7 @@ import { routeTree } from "./routeTree.gen";
 import { setupMeteorWallet } from "@near-wallet-selector/meteor-wallet";
 import { setupMyNearWallet } from "@near-wallet-selector/my-near-wallet";
 import { setupNearMobileWallet } from "@near-wallet-selector/near-mobile-wallet";
+import { setupIntearWallet } from "intear-wallet";
 import { NETWORK_ID } from "./config";
 
 // Create a new QueryClient instance
@@ -48,14 +49,15 @@ export default function App() {
       <WalletSelectorProvider
         config={{
           network: NETWORK_ID,
-          createAccessKeyFor: SOCIAL_CONTRACT[NETWORK_ID],
+          createAccessKeyFor: "crosspost.near",
           modules: [
             setupMyNearWallet(),
             setupMeteorWallet(),
             // setupHereWallet(),
             setupNearMobileWallet(),
             // @ts-ignore
-            setupBitteWallet({ contractId: SOCIAL_CONTRACT[NETWORK_ID] }),
+            setupBitteWallet({ contractId: "crosspost.near" }),
+            setupIntearWallet()
           ],
         }}
       >

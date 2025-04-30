@@ -63,6 +63,7 @@
     "date-fns": "^4.1.0",
     "favicons-rspack-plugin": "^7.0.0",
     "framer-motion": "^12.4.1",
+    "intear-wallet": "^8.10.3",
     "js-cookie": "^3.0.5",
     "lucide-react": "^0.475.0",
     "near-sign-verify": "^0.1.3",
